@@ -18,10 +18,22 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include
+from gfg_site_app.views import homepage
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#         path("", include("gfg_site_app.urls")),  # Include your app's URLs
+
+# ]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('homepage/', homepage, name='homepage'),  
 ]
+
 
 if settings.DEBUG:
        urlpatterns += static(settings.MEDIA_URL,
                              document_root=settings.MEDIA_ROOT)
+       
