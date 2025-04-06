@@ -14,3 +14,14 @@ class GeeksModel(models.Model):
     # with their title name
     def __str__(self):
         return self.title
+    
+    
+    
+
+class CandlestickData(models.Model):
+    timestamp = models.BigIntegerField(primary_key=True)
+    open_price = models.FloatField()
+    high_price = models.FloatField()
+    low_price = models.FloatField()
+    close_price = models.FloatField()
+    volume = models.IntegerField()
